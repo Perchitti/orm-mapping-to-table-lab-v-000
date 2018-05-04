@@ -22,6 +22,11 @@ def self.create_table
 
 end
 
+def self.drop_table
+   sql = "DROP TABLE IF EXISTS students"
+   DB[:conn].execute(sql)
+ end
+
 def save
   sql = <<-SQL
     INSERT INTO students (name, grade)
